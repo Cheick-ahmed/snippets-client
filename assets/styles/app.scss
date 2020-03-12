@@ -1,0 +1,104 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+.layout-enter-active, .layout-leave-active {
+	transition: opacity .3s
+}
+.layout-enter, .layout-leave-active {
+	opacity: 0
+}
+
+
+body {
+	@apply bg-gray-900;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	@apply font-header mb-2 text-gray-600;
+}
+h3 {
+	@apply text-3xl text-gray-600 mb-4;
+}
+
+a {
+	@apply text-blue-500;
+}
+
+p {
+	@apply text-gray-600 mb-4 leading-8 tracking-wider;
+}
+
+.container {
+	@apply w-11/12 mx-auto;
+}
+
+.container-fluid {
+	@apply w-11/12 mx-auto;
+}
+
+
+code {
+	@apply text-teal-300 bg-gray-800 p-1 px-2 rounded;
+  // background: #eaeef3;
+  // color: #00193a;
+}
+
+.hljs {
+	@apply  p-4  mb-6 bg-gray-800;
+  display: block;
+  overflow-x: auto;
+  // background: #eaeef3;
+  // color: #00193a;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-title,
+.hljs-section,
+.hljs-doctag,
+.hljs-name,
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-comment {
+  color: #738191;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-section,
+.hljs-built_in,
+.hljs-literal,
+.hljs-type,
+.hljs-addition,
+.hljs-tag,
+.hljs-quote,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  @apply text-teal-300;
+}
+
+.hljs-meta,
+.hljs-subst,
+.hljs-symbol,
+.hljs-regexp,
+.hljs-attribute,
+.hljs-deletion,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-bullet {
+  color: #4c81c9;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+
+@import 'codemirror/lib/codemirror.css';
