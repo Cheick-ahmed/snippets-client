@@ -18,7 +18,7 @@
 			</div>
 		</div>
 		<div class="w-full lg:w-9/12">
-			<div class=" mb-12">
+			<div class="mb-12">
 				<h1 class="text-3xl text-white font-medium leading-tight mb-4 flex items-center">
 					{{ snippet.title }}
 				</h1>
