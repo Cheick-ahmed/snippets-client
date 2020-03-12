@@ -26,6 +26,7 @@
 	<script>
 		import moment from 'moment'
 		export default {
+			middleware : 'auth',
 			head () {
 				return {
 					title : `Snippet by ${this.user.username}` 
@@ -51,7 +52,7 @@
 						snippets : snippets.data.data
 					}
 				} catch (e) {
-					console.log(e)
+					//
 				}
 			}
 		}

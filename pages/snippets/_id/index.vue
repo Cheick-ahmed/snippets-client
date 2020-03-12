@@ -11,19 +11,17 @@
 				</ul>
 				<div class="text-muted font-header text-sm text-gray-100 mt-10 lg:mt-16">
 					Created by
-					<nuxt-link :to="{ name : '' }" class="">
-						{{ snippet.author.data.name }}
+					<nuxt-link :to="{ name : 'author-id' , params : { id : snippet.author.data.username } }" class="">
+						{{ snippet.author.data.username }}
 					</nuxt-link>
 				</div>
 			</div>
 		</div>
 		<div class="w-full lg:w-9/12">
-			<div class="container mb-12">
-				<div class="">
-					<h1 class="text-3xl text-white font-medium leading-tight mb-4 flex items-center">
-						{{ snippet.title }}
-					</h1>
-				</div>
+			<div class=" mb-12">
+				<h1 class="text-3xl text-white font-medium leading-tight mb-4 flex items-center">
+					{{ snippet.title }}
+				</h1>
 			</div>
 			<div class="container">
 				<h1 class="text-3xl text-gray-600 font-medium mb-6 lg:mb-12">

@@ -9,25 +9,17 @@
 		</div>
 
 		<div class="container mb-16">
-			<h1 class="text-center text-2xl text-gray-600 font-medium  mb-16">
+			<h1 class="text-center text-2xl text-gray-600 font-medium mb-16">
 				({{ snippets.length }}) snippet{{snippets.length > 1 ? 's' : ''}} trouvé{{snippets.length > 1 ? 's' : ''}}
 			</h1>
 
-			<snippet-card 
-			v-for="snippet in snippets"
-			:key="snippet.uuid"
-			:snippet="snippet"
-			>
-			
-			<nuxt-link
-			:to=" {} "
-			>
-				{{ snippet.author.data.name }}
-			</nuxt-link>
-			
-		</snippet-card>
+			<snippet-card v-for="snippet in snippets" :key="snippet.uuid" :snippet="snippet">
+				<nuxt-link :to="{ name : 'author-id' , params : { id : 'snippet.author.data.username' } }">
+					{{ snippet.author.data.username }}
+				</nuxt-link>
+			</snippet-card>
+		</div>
 	</div>
-</div>
 </template>
 
 <script>

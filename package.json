@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "1.0.0",
-  "description": "My prime Nuxt.js project",
+  "description": "CodeSnippet",
   "author": "Cheick-ahmed",
   "private": true,
   "scripts": {
