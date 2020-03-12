@@ -25,7 +25,7 @@
 							<label for="name" class="block mb-1 text-gray-600 font-semibold">
 								Username
 							</label>
-							<input aria-label="Username" name="username" type="text" class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5 rounded" placeholder="Email address" :class="{ 'border-red-500 transition-all transition-250' : validation.username }" v-model="form.username"/>
+							<input aria-label="Username" name="username" type="text" class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5 rounded" placeholder="Your username" :class="{ 'border-red-500 transition-all transition-250' : validation.username }" v-model="form.username"/>
 							<template v-if="validation.username">
 								<p class="mt-1  text-sm leading-5 font-semibold text-red-500 max-w transition duration-700">
 									{{ validation.username[0] }}
@@ -111,11 +111,8 @@
 			async submit() {
 				try {
 					await this.$axios.post('auth/register', this.form)
-					await this.$auth.loginWith('local' , {
-						data : {
-							email : this.form.email,
-							password : this.form.password
-						}
+					this.$router.push({
+						name : 'auth-login'
 					})
 				} catch (e) {
 					if (e.response.status === 422) {

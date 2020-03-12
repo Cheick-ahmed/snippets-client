@@ -34,7 +34,7 @@
 
 				<template v-else>
 					<li class="xs:py-2 lg:py-0">
-						<nuxt-link :to=" { name : 'auth-login' } " class="text-md font-bold text-gray-500 px-2 py-2 lg:py-4 px-3 mr-3 hover:text-gray-700 hover:underline transition-all transition-1000">
+						<nuxt-link :to=" { name : 'auth-login' } " class="text-md font-bold text-gray-500 py-2 lg:py-4 lg:px-3 mr-3 hover:text-gray-700 hover:underline transition-all transition-1000">
 							Sign in
 						</nuxt-link>
 					</li>
