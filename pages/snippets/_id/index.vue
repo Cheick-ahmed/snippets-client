@@ -23,7 +23,7 @@
 					{{ snippet.title }}
 				</h1>
 			</div>
-			<div class="container">
+			<div class="">
 				<h1 class="text-3xl text-gray-600 font-medium mb-6 lg:mb-12">
 					{{ currentStep.title }}
 				</h1>
