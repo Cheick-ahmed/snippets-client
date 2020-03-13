@@ -1,6 +1,6 @@
 <template>
-	<div class="container flex flex-wrap lg:flex-no-wrap justify-between py-8 lg:py-16">
-		<div class="w-full lg:w-3/12 order-last lg:order-first pt-24 lg:mr-10">
+	<div class="container grid grid-cols-1 lg:grid-cols-3 gap-8 py-6 lg:py-16">
+		<div class="lg:pt-24">
 			<div class="w-full">
 				<ul class="list-none">
 					<li class="mb-2" v-for=" ( step , index ) in orderedStepAsc " :key="step.id">
@@ -17,7 +17,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="w-full lg:w-9/12">
+		<div class="lg:col-span-2">
 			<div class="mb-12">
 				<h1 class="text-3xl text-white font-medium leading-tight mb-4 flex items-center">
 					{{ snippet.title }}

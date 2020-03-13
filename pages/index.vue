@@ -1,9 +1,9 @@
 <template>
 	<div class="container my-16">
-		<div class="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-4">
-			<div class="w-full" v-for="snippet in snippets">
+		<div class="">
+			<div class="" v-for="snippet in snippets">
 				<nuxt-link :to=" { name : 'snippets-id' , params : { id : snippet.uuid } } ">
-					<div class="p-6 mb-10 rounded bg-gray-800 shadow hover:shadow-xl transition-all duration-300 ">
+					<div class="p-6 mb-4 rounded bg-gray-800 shadow hover:shadow-xl transition-all duration-300 ">
 						<nuxt-link :to="{ name : 'author-id', params : { id : snippet.author.data.username }  }" class="block text-muted font-sans text-xs mb-2 capitalize">
 							by {{ snippet.author.data.username }}
 						</nuxt-link>

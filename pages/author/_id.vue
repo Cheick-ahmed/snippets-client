@@ -13,8 +13,8 @@
 			<h1 class="text-xl text-gray-600 font-medium mb-6 font-header tracking-wide"> 
 				({{ snippets.length }}) published snippet{{ snippets.length > 1 ? 's' : ''}} 
 			</h1>
-			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-				<div class="w-full mb-4" v-for="snippet in snippets" :key="snippet.uuid">
+			<div class="">
+				<div class="mb-4" v-for="snippet in snippets" :key="snippet.uuid">
 					<nuxt-link :to=" { name : 'snippets-id' , params : { id : snippet.uuid } } " >
 						<div class="p-6 rounded bg-gray-800 shadow hover:shadow-xl transition-all duration-300">
 							<h2 class="text-gray-200 text-xl font-header font-medium"> {{ snippet.title }} </h2>

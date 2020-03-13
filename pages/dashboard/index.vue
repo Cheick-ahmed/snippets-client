@@ -16,7 +16,6 @@
 			</div>
 		</div>
 
-
 		<div class="container mb-8 lg:mb-16">
 			<dashboardSnippetCard v-for="snippet in snippets" :key="snippet.uuid" :snippet="snippet" @deleted="deletedSnippet(snippet)" />
 		</div>
