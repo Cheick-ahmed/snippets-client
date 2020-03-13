@@ -17,7 +17,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="lg:col-span-2">
+		<div class="lg:col-span-2 container">
 			<div class="mb-12">
 				<h1 class="text-3xl text-white font-medium leading-tight mb-4 flex items-center">
 					{{ snippet.title }}
