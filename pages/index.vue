@@ -41,7 +41,7 @@
 		methods : {
 			updated (snippet) {
 				moment.locale('fr')
-				return moment(snippet.updated_at, 'YYYYMMDD').subtract(3, 'days').calendar();
+				return moment(snippet.updated_at, 'YYYY-MM-DD').format('Do MMMM YYYY');
 			}
 		}
 	}
