@@ -9,11 +9,11 @@
 			<form class="mt-8" @submit.prevent="submit">
 				<div class="rounded-md shadow-sm">
 					<div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
-						<div class="mb-4">
+						<div class="">
 							<label for="name" class="block mb-1 text-gray-600 font-semibold">
 								Name
 							</label>
-							<input aria-label="Your name" name="name" type="text" class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5 rounded" placeholder="Email address" :class="{ 'border-red-500 transition-all transition-250' : validation.name }" v-model="form.name"/>
+							<input aria-label="Your name" name="name" type="text" class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5 rounded" placeholder="Your name" :class="{ 'border-red-500 transition-all transition-250' : validation.name }" v-model="form.name"/>
 							<template v-if="validation.name">
 								<p class="mt-1  text-sm leading-5 font-semibold text-red-500 max-w transition duration-700">
 									{{ validation.name[0] }}
@@ -46,7 +46,7 @@
 						</template>
 					</div>
 					<div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
-						<div class="mb-4">
+						<div class="">
 							<label for="password" class="block mb-1 text-gray-600 font-semibold">
 								Password
 							</label>
