@@ -6,7 +6,7 @@
 				<nuxt-link :to=" { name : 'snippets-id' , params : { id : snippet.uuid } } ">
 					<div class="p-6 mb-4 rounded bg-gray-800 shadow hover:shadow-xl transition-all duration-300 ">
 						<nuxt-link :to="{ name : 'author-id', params : { id : snippet.author.data.username }  }" class="block text-muted font-sans text-xs mb-2 capitalize">
-							by {{ snippet.author.data.username }} &nbsp; &#8213; &nbsp; Updated : {{ updated(snippet) }}
+							by {{ snippet.author.data.username }} &nbsp; &#8213; &nbsp; updated : <span class="lowercase">{{ updated(snippet) }}</span>
 						</nuxt-link>
 						<h2 class="text-gray-200 text-xl font-header font-medium"> {{ snippet.title }} </h2>
 					</div>
@@ -40,8 +40,9 @@
 		},
 		methods : {
 			updated (snippet) {
-				return moment(snippet.updated_at, 'YYYY-MM-DD').fromNow();
+				moment.locale('fr')
+				return moment(snippet.updated_at, 'YYYYMMDD').subtract(3, 'days').calendar();
 			}
-		},
+		}
 	}
 </script>
