@@ -5,7 +5,7 @@
 				<input type="text" class="bg-transparent text-4xl text-gray-700 font-medium leading-tight mb-4 font-header w-full border-dashed border-2 border-gray-400 p-2 hover:border-gray-600 focus:border-gray-600 transition-all transition-250 "
 				placeholder="Sans nom " v-model="snippet.title">
 				<div class="text-gray-600">
-					Créé par
+					By
 					<nuxt-link :to=" {  } ">
 						{{ snippet.author.data.username }}
 					</nuxt-link>
