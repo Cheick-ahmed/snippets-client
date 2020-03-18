@@ -7,7 +7,7 @@
 				<div class="text-gray-600">
 					Créé par
 					<nuxt-link :to=" {  } ">
-						{{ snippet.author.data.name }}
+						{{ snippet.author.data.username }}
 					</nuxt-link>
 				</div>
 			</div>

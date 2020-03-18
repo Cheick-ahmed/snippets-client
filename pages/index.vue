@@ -1,8 +1,7 @@
 <template>
 	<div class="container my-16">
-		<div class="">
+		<div class="mb-6 lg:mb-12">
 			<div class="" v-for="snippet in snippets">
-
 				<nuxt-link :to=" { name : 'snippets-id' , params : { id : snippet.uuid } } ">
 					<div class="p-6 mb-4 rounded bg-gray-800 shadow hover:shadow-xl transition-all duration-300 ">
 						<nuxt-link :to="{ name : 'author-id', params : { id : snippet.author.data.username }  }" class="block text-muted font-sans text-xs mb-2 capitalize">
@@ -12,6 +11,11 @@
 					</div>
 				</nuxt-link>
 			</div>
+		</div>
+		<div class="text-center">
+			<nuxt-link :to=" { name : 'snippets' } " class="shadow hover:shadow-lg px-8 py-3 text-center rounded border border-teal-400 text-teal-400 text-xs uppercase transition-all duration-500">
+				View more &nbsp; &rarr;
+			</nuxt-link>
 		</div>
 	</div>
 </template>
@@ -33,7 +37,6 @@
 		},
 		async asyncData( { app }) {
 			let snippets = await app.$axios.$get('snippets')
-
 			return {
 				snippets : snippets.data
 			}
