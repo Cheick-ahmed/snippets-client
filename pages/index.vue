@@ -12,7 +12,7 @@
 				</nuxt-link>
 			</div>
 		</div>
-		<div class="text-center">
+		<div class="text-center" v-if="snippets.length > 12">
 			<nuxt-link :to=" { name : 'snippets' } " class="shadow hover:shadow-lg px-8 py-3 text-center rounded border border-teal-400 text-teal-400 text-xs uppercase transition-all duration-500">
 				View more &nbsp; &rarr;
 			</nuxt-link>
