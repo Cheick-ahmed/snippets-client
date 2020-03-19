@@ -2,34 +2,37 @@
 	<div class="min-h-screen font-rubik w-full">
 		<div class="container">
 			<h2 class="text-3xl font-bold leading-tight text-gray-200 mb-10">
-				Users ({{users.length}})
+				Snippets 
 			</h2>
 			<div>
 				<table class="min-w-full">
-					<thead class="text-gray-300">
+					<thead class="text-teal-300">
 						<tr>
-							<th class="pr-5 py-3 text-left">Name</th>
-							<th class="px-5 py-3 text-left">Username</th>
-							<th class="px-5 py-3 text-left">Email</th>
-							<th class="px-5 py-3 text-left">Join at</th>
+							<th class="pr-5 py-3 text-left">Title</th>
+							<th class="px-5 py-3 text-left">Updated</th>
+							<th class="px-5 py-3 text-left">Author</th>
+							<th class="px-5 py-3 text-left">Status</th>
+							<th class="px-5 py-3 text-left">Steps</th>
 							<th class="px-5 py-3 text-left"></th>
 						</tr>
 					</thead>
 					<tbody class="bg-transparent text-gray-400">
-						<tr v-for="user in users">
+						<tr v-for="snippet in snippets">
 							<td class="pr-5 py-5  text-sm">
-								{{ user.name }}
+								{{ snippet.title}}
 							</td>
 							<td class="px-5 py-5  text-sm">
-								{{ user.username }}
+								{{ updated(snippet) }}
 							</td>
 							<td class="px-5 py-5  text-sm">
-								{{ user.email }}
+								{{ snippet.author.data.username}}
 							</td>
 							<td class="px-5 py-5  text-sm">
-								{{ join(user) }}
+								{{ snippet.is_public == true ? 'Public' : 'Private'}}
 							</td>
-
+							<td class="px-5 py-5  text-sm">
+								{{ snippet.steps_count}}
+							</td>
 							<td class="pl-5 py-5 text-sm">
 								<div class="flex lg:mt-0">
 									<span class="hidden sm:block shadow-sm rounded-md mr-4">
@@ -62,33 +65,27 @@
 	import moment from 'moment'
 	export default {
 		layout : 'admin',
-		head () {
+		head() {
 			return {
-				title : 'Users'
+				title : 'Snippets',
 			}
 		},
-		data () {
+		data() {
 			return {
-				users : null
+				snippets : null,
+				test:''
 			}
 		},
-		async asyncData ({app,error}) {
-			try {
-				let users = await app.$axios.get('admin/users')
-				return { users : users.data.data }
-			} catch (e) {
-				if (e.response.status === 403) {
-					error({ statusCode: 404, message: 'Page not found.'})
-				}
-				else {
-					error({ statusCode: 500, message: 'Une erreur est survenue.'})
-				}
+		async asyncData( { app }) {
+			let snippets = await app.$axios.$get('admin/snippets')
+			return {
+				snippets : snippets.data
 			}
 		},
 		methods : {
-			join (user) {
+			updated (snippet) {
 				moment.locale('fr')
-				return moment(user.join_at, 'YYYY-MM-DD').format('Do MMMM YYYY');
+				return moment(snippet.updated_at, 'YYYY-MM-DD').format('Do MMMM YYYY');
 			}
 		}
 	}
